@@ -24,7 +24,7 @@ export default function Quiz() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="text-6xl mb-4 animate-bounce-slow">🔄</div>
-          <p className="text-xl text-gray-600">결과를 분석하고 있습니다...</p>
+          <p className="text-xl text-gray-600">正在分析结果...</p>
         </div>
       </div>
     );
@@ -44,7 +44,7 @@ export default function Quiz() {
       <header className="bg-white shadow-sm border-b-2 border-gray-100">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-xl font-bold text-gray-800">테토-에겐 성격 테스트</h1>
+            <h1 className="text-xl font-bold text-gray-800">TETO-雌激素性格测试</h1>
             <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-semibold">
               {currentQuestion + 1}/{totalQuestions}
             </span>

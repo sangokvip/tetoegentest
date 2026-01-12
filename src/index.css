@@ -25,13 +25,13 @@
   --ring: 222.2 84% 4.9%;
   --radius: 0.5rem;
   
-  /* Custom Korean app colors */
+  /* Custom app colors */
   --teto-red: 357 100% 69%;
   --teto-blue: 178 60% 60%;
   --egen-purple: 300 47% 75%;
   --egen-yellow: 48 100% 81%;
-  --korean-blue: 201 64% 58%;
-  --korean-green: 146 40% 73%;
+  --chinese-blue: 201 64% 58%;
+  --chinese-green: 146 40% 73%;
 }
 
 .dark {
@@ -72,7 +72,7 @@ body {
 
 /* Custom utility classes */
 .font-korean {
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Animation classes */
@@ -183,18 +183,18 @@ body {
   background-color: hsl(var(--egen-yellow));
 }
 
-.korean-blue {
-  color: hsl(var(--korean-blue));
+.chinese-blue {
+  color: hsl(var(--chinese-blue));
 }
 
-.bg-korean-blue {
-  background-color: hsl(var(--korean-blue));
+.bg-chinese-blue {
+  background-color: hsl(var(--chinese-blue));
 }
 
-.korean-green {
-  color: hsl(var(--korean-green));
+.chinese-green {
+  color: hsl(var(--chinese-green));
 }
 
-.bg-korean-green {
-  background-color: hsl(var(--korean-green));
+.bg-chinese-green {
+  background-color: hsl(var(--chinese-green));
 }

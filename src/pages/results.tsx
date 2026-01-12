@@ -16,9 +16,9 @@ export default function Results() {
       <div className="min-h-screen flex items-center justify-center">
         <Card className="max-w-md mx-4">
           <CardContent className="pt-6 text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">결과를 찾을 수 없습니다</h1>
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">找不到结果</h1>
             <Button onClick={() => setLocation("/")} className="mt-4">
-              홈으로 돌아가기
+              返回首页
             </Button>
           </CardContent>
         </Card>
@@ -29,14 +29,14 @@ export default function Results() {
   const shareResult = () => {
     if (navigator.share) {
       navigator.share({
-        title: `나는 ${result.type}! 테토-에겐 성격 테스트 결과`,
+        title: `我是${result.type}！TETO-EGEN性格测试结果`,
         text: `${result.summary}`,
         url: window.location.href
       });
     } else {
       // Fallback for browsers that don't support Web Share API
       navigator.clipboard.writeText(window.location.href);
-      alert("링크가 클립보드에 복사되었습니다!");
+      alert("链接已复制到剪贴板！");
     }
   };
 
@@ -53,7 +53,7 @@ export default function Results() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="text-2xl">💎</span>
-            <h1 className="text-2xl font-bold pixel-style">나의 에겐남 테토남 테스트 결과는...</h1>
+            <h1 className="text-2xl font-bold pixel-style">我的EGEN型男/TETO型男测试结果是...</h1>
             <span className="text-2xl">💎</span>
           </div>
         </div>
@@ -127,10 +127,10 @@ export default function Results() {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <span className="text-2xl">♀️</span>
-                  <span className="text-sm font-bold text-pink-600">에겐력</span>
+                  <span className="text-sm font-bold text-pink-600">EGEN力</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-bold text-blue-600">테토력</span>
+                  <span className="text-sm font-bold text-blue-600">TETO力</span>
                   <span className="text-2xl">♂️</span>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default function Results() {
                 {/* 중앙 텍스트 */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-white font-bold text-sm drop-shadow-lg bg-black bg-opacity-50 px-2 py-1 rounded">
-                    {personalityType.includes('teto') ? `테토력 ${tetoScore}%` : `에겐력 ${egenScore}%`}
+                    {personalityType.includes('teto') ? `TETO力 ${tetoScore}%` : `EGEN力 ${egenScore}%`}
                   </span>
                 </div>
                 {/* 점수 표시 */}
@@ -172,7 +172,7 @@ export default function Results() {
             {/* 특성 분석 (게임 RPG 스타일) */}
             <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-2 border-indigo-200">
               <h3 className="text-xl font-bold text-indigo-800 mb-4 flex items-center">
-                <span className="text-2xl mr-2">⚡</span> {personalityType.includes('teto') ? '테토력' : '에겐력'} {personalityType.includes('teto') ? tetoScore : egenScore}%인 나는
+                <span className="text-2xl mr-2">⚡</span> {personalityType.includes('teto') ? 'TETO力' : 'EGEN力'} {personalityType.includes('teto') ? tetoScore : egenScore}%的我
               </h3>
               <div className="space-y-3">
                 {result.traits.slice(0, 3).map((trait, index) => (
@@ -189,13 +189,13 @@ export default function Results() {
             {/* 성격 분석 */}
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-200">
               <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                <span className="text-2xl mr-2">🧠</span> 성격 분석
+                <span className="text-2xl mr-2">🧠</span> 性格分析
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">{result.analysis}</p>
               
               <div className="bg-white rounded-xl p-4 border-2 border-dashed border-purple-300">
                 <h4 className="font-bold text-gray-800 mb-2 flex items-center">
-                  <span className="text-xl mr-2">💕</span> 연애 스타일
+                  <span className="text-xl mr-2">💕</span> 恋爱风格
                 </h4>
                 <p className="text-gray-600 text-sm">{result.loveStyle}</p>
               </div>
@@ -205,14 +205,14 @@ export default function Results() {
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-2xl p-6 border-2 border-pink-200">
                 <h3 className="text-lg font-bold text-pink-800 mb-3 flex items-center">
-                  <span className="text-xl mr-2">💖</span> 연애 궁합
+                  <span className="text-xl mr-2">💖</span> 恋爱匹配
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">{result.compatibility}</p>
               </div>
               
               <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 border-2 border-orange-200">
                 <h3 className="text-lg font-bold text-orange-800 mb-3 flex items-center">
-                  <span className="text-xl mr-2">🎬</span> 닮은 캐릭터
+                  <span className="text-xl mr-2">🎬</span> 相似角色
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">{result.characters}</p>
               </div>
@@ -222,7 +222,7 @@ export default function Results() {
 
         {/* 게임 스타일 액션 버튼들 */}
         <div className="bg-white rounded-3xl shadow-xl border-4 border-indigo-200 p-6 text-center mt-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 pixel-style">🎮 GAME CLEAR! 🎮</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 pixel-style">🎮 测试完成！ 🎮</h2>
           
           <div className="flex flex-wrap justify-center gap-4 mb-6">
             <Button 
@@ -230,7 +230,7 @@ export default function Results() {
               className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <Share2 className="w-5 h-5 mr-2" />
-              친구들에게 자랑하기 💫
+              分享给朋友 💫
             </Button>
           </div>
           
@@ -240,7 +240,7 @@ export default function Results() {
               className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <RotateCcw className="w-4 h-4 mr-2" />
-              다시 플레이하기 🔄
+              重新测试 🔄
             </Button>
             <Button 
               onClick={() => setLocation("/")} 
@@ -248,14 +248,14 @@ export default function Results() {
               className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-50 px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <Users className="w-4 h-4 mr-2" />
-              다른 결과 보기 👀
+              查看其他结果 👀
             </Button>
           </div>
           
           <div className="mt-6 flex justify-center gap-2">
-            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">⭐ 정확도 95%</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">🏆 완료!</span>
-            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">🎯 레벨업</span>
+            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">⭐ 准确度95%</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">🏆 完成！</span>
+            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">🎯 升级</span>
           </div>
         </div>
       </div>
@@ -263,8 +263,8 @@ export default function Results() {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8 mt-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-gray-300 mb-4">이 테스트는 재미를 위한 것이며 과학적 근거를 바탕으로 하지 않습니다.</p>
-          <p className="text-gray-400 text-sm">© 2024 테토-에겐 성격 테스트. 모든 권리 보유.</p>
+          <p className="text-gray-300 mb-4">本测试仅供娱乐，不以科学依据为基础。</p>
+          <p className="text-gray-400 text-sm">© 2024 TETO-EGEN性格测试。保留所有权利。</p>
         </div>
       </footer>
     </div>
